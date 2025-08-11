@@ -26,6 +26,11 @@ export async function loadComponent(selector) {
     // Initialize any component-specific scripts
     initializeComponentScripts(container, sourceFile);
     
+        // If navbar was loaded, initialize its functionality
+        if (sourceFile.includes('navbar.html')) {
+          const { initializeNavbar } = await import('./navbar.js');
+          initializeNavbar();
+        }
   } catch (error) {
     console.error('Error loading component:', error);
   }
