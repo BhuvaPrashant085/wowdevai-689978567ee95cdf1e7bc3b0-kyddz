@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThreadCraft Studio - Custom String Art</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 font-['sofia-pro']">
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-amber-50 to-orange-100 py-20 px-4" data-id="hero-section">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div data-id="hero-content">
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6" data-id="hero-title">
+            Transform Your Photos Into 
+            <span class="text-orange-600" data-id="hero-highlight">String Art</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed" data-id="hero-description">
+            Custom handcrafted string art on premium MDF boards. Upload your image and we'll create a stunning piece delivered right to your door.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4" data-id="hero-buttons">
+            <button class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center justify-center gap-2" data-id="order-now-btn">
+              <i data-lucide="upload" class="w-5 h-5"></i>
+              Order Custom Art
+            </button>
+            <button class="border-2 border-orange-600 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 hover:text-white transition-colors" data-id="view-gallery-btn">
+              View Gallery
+            </button>
+          </div>
+        </div>
+        <div class="relative" data-id="hero-image">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=600&fit=crop" 
+               alt="Beautiful string art portrait" 
+               class="rounded-2xl shadow-2xl w-full max-w-md mx-auto"
+               data-id="hero-main-image">
+          <div class="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg" data-id="hero-badge">
+            <i data-lucide="heart" class="w-6 h-6 text-orange-600"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 px-4" data-id="features-section">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-id="features-header">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-id="features-title">
+          Why Choose ThreadCraft Studio?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-id="features-subtitle">
+          Premium materials, expert craftsmanship, and convenient home delivery
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8" data-id="features-grid">
+        <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow" data-id="feature-1">
+          <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" data-id="feature-1-icon">
+            <i data-lucide="layers" class="w-8 h-8 text-orange-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4" data-id="feature-1-title">Premium MDF Boards</h3>
+          <p class="text-gray-600" data-id="feature-1-description">
+            High-quality MDF boards that provide the perfect base for long-lasting string art creations.
+          </p>
+        </div>
+
+        <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow" data-id="feature-2">
+          <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" data-id="feature-2-icon">
+            <i data-lucide="truck" class="w-8 h-8 text-orange-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4" data-id="feature-2-title">Home Delivery</h3>
+          <p class="text-gray-600" data-id="feature-2-description">
+            Safe and secure delivery right to your doorstep with careful packaging and tracking.
+          </p>
+        </div>
+
+        <div class="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow" data-id="feature-3">
+          <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6" data-id="feature-3-icon">
+            <i data-lucide="palette" class="w-8 h-8 text-orange-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-4" data-id="feature-3-title">Custom Designs</h3>
+          <p class="text-gray-600" data-id="feature-3-description">
+            Transform any photo into beautiful string art with our expert craftsmanship and attention to detail.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size Options Section -->
+  <section class="py-20 px-4 bg-white" data-id="sizes-section">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-id="sizes-header">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-id="sizes-title">
+          Choose Your Perfect Size
+        </h2>
+        <p class="text-lg text-gray-600" data-id="sizes-subtitle">
+          Multiple size options to fit any space and budget
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6" data-id="sizes-grid">
+        <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-orange-50 hover:border-orange-200 border-2 border-transparent transition-all cursor-pointer" data-id="size-small">
+          <div class="bg-white w-20 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center shadow-sm" data-id="size-small-icon">
+            <i data-lucide="square" class="w-10 h-10 text-orange-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2" data-id="size-small-title">Small</h3>
+          <p class="text-gray-600 mb-3" data-id="size-small-dimensions">8" × 8"</p>
+          <p class="text-2xl font-bold text-orange-600" data-id="size-small-price">$25</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-orange-50 hover:border-orange-200 border-2 border-transparent transition-all cursor-pointer" data-id="size-medium">
+          <div class="bg-white w-20 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center shadow-sm" data-id="size-medium-icon">
+            <i data-lucide="square" class="w-12 h-12 text-orange-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2" data-id="size-medium-title">Medium</h3>
+          <p class="text-gray-600 mb-3" data-id="size-medium-dimensions">12" × 12"</p>
+          <p class="text-2xl font-bold text-orange-600" data-id="size-medium-price">$45</p>
+        </div>
+
+        <div class="bg-orange-50 rounded-xl p-6 text-center border-2 border-orange-200 relative" data-id="size-large">
+          <div class="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold" data-id="size-large-badge">
+            Popular
+          </div>
+          <div class="bg-white w-20 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center shadow-sm" data-id="size-large-icon">
+            <i data-lucide="square" class="w-14 h-14 text-orange-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2" data-id="size-large-title">Large</h3>
+          <p class="text-gray-600 mb-3" data-id="size-large-dimensions">16" × 16"</p>
+          <p class="text-2xl font-bold text-orange-600" data-id="size-large-price">$75</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 text-center hover:bg-orange-50 hover:border-orange-200 border-2 border-transparent transition-all cursor-pointer" data-id="size-xlarge">
+          <div class="bg-white w-20 h-20 rounded-lg mx-auto mb-4 flex items-center justify-center shadow-sm" data-id="size-xlarge-icon">
+            <i data-lucide="square" class="w-16 h-16 text-orange-600"></i>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-800 mb-2" data-id="size-xlarge-title">X-Large</h3>
+          <p class="text-gray-600 mb-3" data-id="size-xlarge-dimensions">20" × 20"</p>
+          <p class="text-2xl font-bold text-orange-600" data-id="size-xlarge-price">$120</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="py-20 px-4" data-id="gallery-section">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-id="gallery-header">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" data-id="gallery-title">
+          Our Recent Creations
+        </h2>
+        <p class="text-lg text-gray-600" data-id="gallery-subtitle">
+          See the beautiful string art we've crafted for our customers
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6" data-id="gallery-grid">
+        <div class="group cursor-pointer" data-id="gallery-item-1">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-shadow">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop" 
+                 alt="Portrait string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-1">
+            <div class="p-4" data-id="gallery-item-1-info">
+              <h3 class="font-semibold text-gray-800" data-id="gallery-item-1-title">Portrait String Art</h3>
+              <p class="text-sm text-gray-600" data-id="gallery-item-1-size">16" × 16"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer" data-id="gallery-item-2">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-shadow">
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=400&fit=crop" 
+                 alt="Landscape string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-2">
+            <div class="p-4" data-id="gallery-item-2-info">
+              <h3 class="font-semibold text-gray-800" data-id="gallery-item-2-title">Landscape Art</h3>
+              <p class="text-sm text-gray-600" data-id="gallery-item-2-size">20" × 20"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer" data-id="gallery-item-3">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-shadow">
+            <img src="https://images.unsplash.com/photo-1574870111867-089730e5a72b?w=400&h=400&fit=crop" 
+                 alt="Pet string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-3">
+            <div class="p-4" data-id="gallery-item-3-info">
+              <h3 class="font-semibold text-gray-800" data-id="gallery-item-3-title">Pet Portrait</h3>
+              <p class="text-sm text-gray-600" data-id="gallery-item-3-size">12" × 12"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white" data-id="cta-section">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" data-id="cta-title">
+        Ready to Create Your Custom String Art?
+      </h2>
+      <p class="text-xl mb-8 opacity-90" data-id="cta-description">
+        Upload your favorite photo and let us transform it into a beautiful string art masterpiece
+      </p>
+      <button class="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2" data-id="cta-button">
+        <i data-lucide="camera" class="w-5 h-5"></i>
+        Start Your Order
+      </button>
+    </div>
+  </section>
+
+  <div id="footer-container" data-source="components/footer.html"></div>
+
+  <!-- Order Modal -->
+  <div id="order-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4" data-id="order-modal">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto" data-id="order-modal-content">
+      <div class="p-6 border-b" data-id="order-modal-header">
+        <div class="flex justify-between items-center">
+          <h3 class="text-2xl font-bold text-gray-800" data-id="order-modal-title">Create Your String Art</h3>
+          <button id="close-modal" class="text-gray-400 hover:text-gray-600" data-id="close-modal-btn">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="p-6" data-id="order-form-container">
+        <form id="order-form" data-id="order-form">
+          <div class="mb-6" data-id="upload-section">
+            <label class="block text-sm font-medium text-gray-700 mb-2" data-id="upload-label">
+              Upload Your Image
+            </label>
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-orange-400 transition-colors" data-id="upload-area">
+              <input type="file" id="image-upload" accept="image/*" class="hidden" data-id="image-upload-input">
+              <i data-lucide="upload" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+              <p class="text-gray-600 mb-2" data-id="upload-text">Click to upload or drag and drop</p>
+              <p class="text-sm text-gray-400" data-id="upload-subtext">PNG, JPG, GIF up to 10MB</p>
+              <button type="button" id="upload-btn" class="mt-4 bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors" data-id="upload-trigger-btn">
+                Choose File
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-6" data-id="size-selection">
+            <label class="block text-sm font-medium text-gray-700 mb-3" data-id="size-label">
+              Select Size
+            </label>
+            <div class="grid grid-cols-2 gap-3" data-id="size-options">
+              <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" data-id="size-option-small">
+                <input type="radio" name="size" value="small" class="mr-3" data-id="size-radio-small">
+                <div>
+                  <div class="font-medium" data-id="size-small-name">Small (8" × 8")</div>
+                  <div class="text-orange-600 font-semibold" data-id="size-small-cost">$25</div>
+                </div>
+              </label>
+              <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" data-id="size-option-medium">
+                <input type="radio" name="size" value="medium" class="mr-3" data-id="size-radio-medium">
+                <div>
+                  <div class="font-medium" data-id="size-medium-name">Medium (12" × 12")</div>
+                  <div class="text-orange-600 font-semibold" data-id="size-medium-cost">$45</div>
+                </div>
+              </label>
+              <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" data-id="size-option-large">
+                <input type="radio" name="size" value="large" class="mr-3 checked:bg-orange-600" checked data-id="size-radio-large">
+                <div>
+                  <div class="font-medium" data-id="size-large-name">Large (16" × 16")</div>
+                  <div class="text-orange-600 font-semibold" data-id="size-large-cost">$75</div>
+                </div>
+              </label>
+              <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50" data-id="size-option-xlarge">
+                <input type="radio" name="size" value="xlarge" class="mr-3" data-id="size-radio-xlarge">
+                <div>
+                  <div class="font-medium" data-id="size-xlarge-name">X-Large (20" × 20")</div>
+                  <div class="text-orange-600 font-semibold" data-id="size-xlarge-cost">$120</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4 mb-6" data-id="customer-info">
+            <div data-id="name-field">
+              <label class="block text-sm font-medium text-gray-700 mb-1" data-id="name-label">Full Name</label>
+              <input type="text" required class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" data-id="name-input">
+            </div>
+            <div data-id="phone-field">
+              <label class="block text-sm font-medium text-gray-700 mb-1" data-id="phone-label">Phone Number</label>
+              <input type="tel" required class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" data-id="phone-input">
+            </div>
+          </div>
+
+          <div class="mb-6" data-id="address-field">
+            <label class="block text-sm font-medium text-gray-700 mb-1" data-id="address-label">Delivery Address</label>
+            <textarea required class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent h-20 resize-none" data-id="address-input"></textarea>
+          </div>
+
+          <div class="mb-6" data-id="notes-field">
+            <label class="block text-sm font-medium text-gray-700 mb-1" data-id="notes-label">Special Instructions (Optional)</label>
+            <textarea class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent h-20 resize-none" placeholder="Any specific requirements or notes..." data-id="notes-input"></textarea>
+          </div>
+
+          <div class="flex justify-between items-center pt-6 border-t" data-id="order-summary">
+            <div data-id="total-price">
+              <span class="text-lg text-gray-600" data-id="total-label">Total: </span>
+              <span class="text-2xl font-bold text-orange-600" data-id="total-amount">$75</span>
+            </div>
+            <button type="submit" class="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors flex items-center gap-2" data-id="submit-order-btn">
+              <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+              Place Order
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    
+    // Load shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+
+    // Modal functionality
+    const orderModal = document.getElementById('order-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const orderButtons = document.querySelectorAll('[data-id="order-now-btn"], [data-id="cta-button"], [data-id="start-your-order"]');
+    
+    // Open modal
+    orderButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        orderModal.classList.remove('hidden');
+        orderModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Close modal
+    closeModalBtn.addEventListener('click', () => {
+      orderModal.classList.add('hidden');
+      orderModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal on backdrop click
+    orderModal.addEventListener('click', (e) => {
+      if (e.target === orderModal) {
+        orderModal.classList.add('hidden');
+        orderModal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // File upload functionality
+    const uploadBtn = document.getElementById('upload-btn');
+    const imageUpload = document.getElementById('image-upload');
+    const uploadArea = document.querySelector('[data-id="upload-area"]');
+    
+    uploadBtn.addEventListener('click', () => {
+      imageUpload.click();
+    });
+    
+    uploadArea.addEventListener('click', () => {
+      imageUpload.click();
+    });
+    
+    imageUpload.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const uploadText = document.querySelector('[data-id="upload-text"]');
+        uploadText.textContent = `Selected: ${file.name}`;
+        uploadArea.classList.add('border-orange-400', 'bg-orange-50');
+      }
+    });
+
+    // Size selection and pricing
+    const sizeRadios = document.querySelectorAll('input[name="size"]');
+    const totalAmount = document.querySelector('[data-id="total-amount"]');
+    
+    const prices = {
+      small: 25,
+      medium: 45,
+      large: 75,
+      xlarge: 120
+    };
+    
+    sizeRadios.forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        const selectedSize = e.target.value;
+        const price = prices[selectedSize];
+        totalAmount.textContent = `$${price}`;
+      });
+    });
+
+    // Form submission
+    const orderForm = document.getElementById('order-form');
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(orderForm);
+      const orderData = {
+        image: imageUpload.files[0],
+        size: formData.get('size'),
+        name: formData.get('name') || document.querySelector('[data-id="name-input"]').value,
+        phone: formData.get('phone') || document.querySelector('[data-id="phone-input"]').value,
+        address: formData.get('address') || document.querySelector('[data-id="address-input"]').value,
+        notes: formData.get('notes') || document.querySelector('[data-id="notes-input"]').value
+      };
+      
+      // Simulate order processing
+      const submitBtn = document.querySelector('[data-id="submit-order-btn"]');
+      submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Processing...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('Order submitted successfully! We will contact you within 24 hours to confirm details and payment.');
+        orderModal.classList.add('hidden');
+        orderModal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+        orderForm.reset();
+        submitBtn.innerHTML = '<i data-lucide="shopping-cart" class="w-5 h-5"></i> Place Order';
+        submitBtn.disabled = false;
+        document.querySelector('[data-id="upload-text"]').textContent = 'Click to upload or drag and drop';
+        uploadArea.classList.remove('border-orange-400', 'bg-orange-50');
+        lucide.createIcons();
+      }, 2000);
+    });
+
+    // Smooth scroll for gallery button
+    document.querySelector('[data-id="view-gallery-btn"]').addEventListener('click', () => {
+      document.querySelector('[data-id="gallery-section"]').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

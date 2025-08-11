@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - ThreadCraft Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/yjp3aho.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 font-['sofia-pro']">
+  <div id="navbar-container" data-source="components/navbar.html"></div>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-orange-100 to-amber-50 py-16 px-4" data-id="gallery-hero">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6" data-id="gallery-hero-title">
+        Our String Art Gallery
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-id="gallery-hero-description">
+        Explore our collection of custom string art creations. Each piece is handcrafted with precision and care, transforming cherished photos into stunning wall art.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="py-8 px-4 bg-white" data-id="gallery-filters">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-wrap justify-center gap-4" data-id="filter-buttons">
+        <button class="filter-btn active px-6 py-3 rounded-full border-2 border-orange-600 bg-orange-600 text-white font-semibold transition-colors" data-filter="all" data-id="filter-all">
+          All Artwork
+        </button>
+        <button class="filter-btn px-6 py-3 rounded-full border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold transition-colors" data-filter="portraits" data-id="filter-portraits">
+          Portraits
+        </button>
+        <button class="filter-btn px-6 py-3 rounded-full border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold transition-colors" data-filter="pets" data-id="filter-pets">
+          Pets
+        </button>
+        <button class="filter-btn px-6 py-3 rounded-full border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold transition-colors" data-filter="landscapes" data-id="filter-landscapes">
+          Landscapes
+        </button>
+        <button class="filter-btn px-6 py-3 rounded-full border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold transition-colors" data-filter="abstract" data-id="filter-abstract">
+          Abstract
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="py-12 px-4" data-id="gallery-grid-section">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-id="gallery-grid">
+        
+        <!-- Portrait Items -->
+        <div class="gallery-item group" data-category="portraits" data-id="gallery-item-portrait-1">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop" 
+                 alt="Portrait string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-portrait-1">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-portrait-1">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-1">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-portrait-1">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-portrait-1">Family Portrait</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-portrait-1">16" × 16"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-portrait-1">
+                <i data-lucide="user" class="w-4 h-4 mr-1"></i>
+                Portrait
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="portraits" data-id="gallery-item-portrait-2">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                 alt="Portrait string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-portrait-2">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-portrait-2">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-2">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-portrait-2">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-portrait-2">Professional Headshot</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-portrait-2">12" × 12"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-portrait-2">
+                <i data-lucide="user" class="w-4 h-4 mr-1"></i>
+                Portrait
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pet Items -->
+        <div class="gallery-item group" data-category="pets" data-id="gallery-item-pet-1">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1574870111867-089730e5a72b?w=400&h=400&fit=crop" 
+                 alt="Pet string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-pet-1">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-pet-1">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-3">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-pet-1">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-pet-1">Golden Retriever</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-pet-1">16" × 16"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-pet-1">
+                <i data-lucide="heart" class="w-4 h-4 mr-1"></i>
+                Pet
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="pets" data-id="gallery-item-pet-2">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&h=400&fit=crop" 
+                 alt="Cat string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-pet-2">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-pet-2">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-4">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-pet-2">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-pet-2">Tabby Cat</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-pet-2">12" × 12"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-pet-2">
+                <i data-lucide="heart" class="w-4 h-4 mr-1"></i>
+                Pet
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Landscape Items -->
+        <div class="gallery-item group" data-category="landscapes" data-id="gallery-item-landscape-1">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=400&fit=crop" 
+                 alt="Landscape string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-landscape-1">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-landscape-1">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-5">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-landscape-1">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-landscape-1">Mountain Vista</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-landscape-1">20" × 20"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-landscape-1">
+                <i data-lucide="mountain" class="w-4 h-4 mr-1"></i>
+                Landscape
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="landscapes" data-id="gallery-item-landscape-2">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop" 
+                 alt="Forest string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-landscape-2">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-landscape-2">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-6">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-landscape-2">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-landscape-2">Forest Path</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-landscape-2">16" × 16"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-landscape-2">
+                <i data-lucide="mountain" class="w-4 h-4 mr-1"></i>
+                Landscape
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abstract Items -->
+        <div class="gallery-item group" data-category="abstract" data-id="gallery-item-abstract-1">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop" 
+                 alt="Abstract string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-abstract-1">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-abstract-1">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-7">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-abstract-1">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-abstract-1">Geometric Patterns</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-abstract-1">16" × 16"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-abstract-1">
+                <i data-lucide="zap" class="w-4 h-4 mr-1"></i>
+                Abstract
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item group" data-category="abstract" data-id="gallery-item-abstract-2">
+          <div class="relative overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-lg transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=400&h=400&fit=crop" 
+                 alt="Abstract string art" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                 data-id="gallery-image-abstract-2">
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center" data-id="gallery-overlay-abstract-2">
+              <button class="opacity-0 group-hover:opacity-100 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300" data-id="gallery-view-btn-8">
+                View Details
+              </button>
+            </div>
+            <div class="p-4" data-id="gallery-info-abstract-2">
+              <h3 class="font-semibold text-gray-800 mb-1" data-id="gallery-title-abstract-2">Flow Design</h3>
+              <p class="text-sm text-gray-600 mb-2" data-id="gallery-size-abstract-2">20" × 20"</p>
+              <div class="flex items-center text-sm text-orange-600" data-id="gallery-category-abstract-2">
+                <i data-lucide="zap" class="w-4 h-4 mr-1"></i>
+                Abstract
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white" data-id="gallery-cta">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" data-id="gallery-cta-title">
+        Love What You See?
+      </h2>
+      <p class="text-xl mb-8 opacity-90" data-id="gallery-cta-description">
+        Ready to turn your favorite photo into a stunning string art masterpiece?
+      </p>
+      <button class="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2" data-id="gallery-cta-button">
+        <i data-lucide="upload" class="w-5 h-5"></i>
+        Order Your Custom Art
+      </button>
+    </div>
+  </section>
+
+  <div id="footer-container" data-source="components/footer.html"></div>
+
+  <script type="module">
+    import { loadComponent } from './scripts/components/loader.js';
+    
+    // Load shared components
+    loadComponent('#navbar-container');
+    loadComponent('#footer-container');
+    
+    // Initialize icons after components are loaded
+    setTimeout(() => {
+      lucide.createIcons();
+    }, 100);
+
+    // Gallery filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-orange-600', 'text-white');
+          btn.classList.add('text-orange-600');
+        });
+        button.classList.add('active', 'bg-orange-600', 'text-white');
+        button.classList.remove('text-orange-600');
+        
+        const filterValue = button.dataset.filter;
+        
+        // Filter gallery items
+        galleryItems.forEach(item => {
+          if (filterValue === 'all' || item.dataset.category === filterValue) {
+            item.style.display = 'block';
+            // Add animation
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+              item.style.transition = 'all 0.3s ease';
+            }, 100);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // CTA button functionality
+    document.querySelector('[data-id="gallery-cta-button"]').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
