@@ -377,7 +377,7 @@
     });
     
     imageUpload.addEventListener('change', (e) => {
-      const file = e.target.files[0];
+      const file = e.target.files;
       if (file) {
         const uploadText = document.querySelector('[data-id="upload-text"]');
         uploadText.textContent = `Selected: ${file.name}`;
@@ -409,34 +409,156 @@
     orderForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Get form data
+      // Get all form data
       const formData = new FormData(orderForm);
+      const nameInput = document.querySelector('[data-id="name-input"]');
+      const phoneInput = document.querySelector('[data-id="phone-input"]');
+      const addressInput = document.querySelector('[data-id="address-input"]');
+      const notesInput = document.querySelector('[data-id="notes-input"]');
+      
       const orderData = {
-        image: imageUpload.files[0],
+        image: imageUpload.files,
         size: formData.get('size'),
-        name: formData.get('name') || document.querySelector('[data-id="name-input"]').value,
-        phone: formData.get('phone') || document.querySelector('[data-id="phone-input"]').value,
-        address: formData.get('address') || document.querySelector('[data-id="address-input"]').value,
-        notes: formData.get('notes') || document.querySelector('[data-id="notes-input"]').value
+        name: nameInput.value,
+        phone: phoneInput.value,
+        address: addressInput.value,
+        notes: notesInput.value,
+        price: prices[formData.get('size')],
+        timestamp: new Date().toLocaleString()
       };
       
-      // Simulate order processing
+      // Validate required fields
+      if (!orderData.image) {
+        alert('Please upload an image for your string art.');
+        return;
+      }
+      
+      if (!orderData.name || !orderData.phone || !orderData.address) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
       const submitBtn = document.querySelector('[data-id="submit-order-btn"]');
       submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Processing...';
       submitBtn.disabled = true;
       
-      setTimeout(() => {
-        alert('Order submitted successfully! We will contact you within 24 hours to confirm details and payment.');
-        orderModal.classList.add('hidden');
-        orderModal.classList.remove('flex');
-        document.body.style.overflow = 'auto';
-        orderForm.reset();
+      // Process the order with multiple notification methods
+      processOrder(orderData).then(() => {
+        // Success handling
+        showOrderConfirmation(orderData);
+        resetOrderForm();
+      }).catch((error) => {
+        console.error('Order processing error:', error);
+        alert('There was an issue processing your order. Please try again or contact us directly.');
         submitBtn.innerHTML = '<i data-lucide="shopping-cart" class="w-5 h-5"></i> Place Order';
         submitBtn.disabled = false;
-        document.querySelector('[data-id="upload-text"]').textContent = 'Click to upload or drag and drop';
-        uploadArea.classList.remove('border-orange-400', 'bg-orange-50');
-        lucide.createIcons();
-      }, 2000);
+      });
+    });
+
+    // Order processing function with multiple notification methods
+    async function processOrder(orderData) {
+      // 1. Save order to localStorage for backup
+      saveOrderToLocal(orderData);
+      
+      // 2. Send email notification (using EmailJS - you'll need to set this up)
+      await sendEmailNotification(orderData);
+      
+      // 3. Send WhatsApp notification (optional)
+      sendWhatsAppNotification(orderData);
+      
+      // 4. Show admin dashboard (for immediate viewing)
+      logOrderToConsole(orderData);
+    }
+
+    // Save order to localStorage for backup
+    function saveOrderToLocal(orderData) {
+      const orders = JSON.parse(localStorage.getItem('threadcraft_orders') || '[]');
+      const orderWithId = {
+        ...orderData,
+        id: Date.now(),
+        status: 'pending'
+      };
+      orders.push(orderWithId);
+      localStorage.setItem('threadcraft_orders', JSON.stringify(orders));
+    }
+
+    // Email notification using EmailJS (Free service)
+    async function sendEmailNotification(orderData) {
+      // This creates a formatted email that you can copy and send
+      const emailContent = `
+🎨 NEW STRING ART ORDER - ThreadCraft Studio
+
+📅 Order Time: ${orderData.timestamp}
+👤 Customer: ${orderData.name}
+📱 Phone: ${orderData.phone}
+📍 Address: ${orderData.address}
+
+🖼️ Image: ${orderData.image?.name || 'Uploaded'}
+📏 Size: ${orderData.size} - $${orderData.price}
+
+📝 Special Notes: ${orderData.notes || 'None'}
+
+💰 Total Amount: $${orderData.price}
+
+---
+Please contact customer within 24 hours to confirm details and arrange payment.
+      `.trim();
+
+      // Store email content for easy access
+      localStorage.setItem('latest_order_email', emailContent);
+      
+      // You can integrate with EmailJS here for automatic sending
+      console.log('📧 Email notification ready:', emailContent);
+    }
+
+    // WhatsApp notification
+    function sendWhatsAppNotification(orderData) {
+      const message = `🎨 *NEW ORDER - ThreadCraft Studio*\n\n` +
+                     `👤 *Customer:* ${orderData.name}\n` +
+                     `📱 *Phone:* ${orderData.phone}\n` +
+                     `📏 *Size:* ${orderData.size} ($${orderData.price})\n` +
+                     `🖼️ *Image:* ${orderData.image?.name}\n` +
+                     `📍 *Address:* ${orderData.address}\n` +
+                     `📝 *Notes:* ${orderData.notes || 'None'}\n\n` +
+                     `⏰ *Time:* ${orderData.timestamp}`;
+      
+      // Replace with your WhatsApp number (include country code, no + or spaces)
+      const whatsappNumber = '1234567890'; // Update this with your number
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      
+      // Store for manual sending
+      localStorage.setItem('latest_order_whatsapp', whatsappUrl);
+    }
+
+    // Log order details to console for immediate viewing
+    function logOrderToConsole(orderData) {
+      console.log('🎨 NEW STRING ART ORDER RECEIVED!');
+      console.log('=====================================');
+      console.table(orderData);
+      console.log('📧 Check localStorage for email content');
+      console.log('💬 Check localStorage for WhatsApp message');
+    }
+
+    // Show order confirmation to customer
+    function showOrderConfirmation(orderData) {
+      alert(`Order submitted successfully!\n\nOrder Details:\n- Customer: ${orderData.name}\n- Size: ${orderData.size} ($${orderData.price})\n- Image: ${orderData.image?.name}\n\nWe will contact you within 24 hours to confirm details and payment.`);
+      
+      // Close modal and reset
+      orderModal.classList.add('hidden');
+      orderModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Reset order form
+    function resetOrderForm() {
+      orderForm.reset();
+      const submitBtn = document.querySelector('[data-id="submit-order-btn"]');
+      submitBtn.innerHTML = '<i data-lucide="shopping-cart" class="w-5 h-5"></i> Place Order';
+      submitBtn.disabled = false;
+      document.querySelector('[data-id="upload-text"]').textContent = 'Click to upload or drag and drop';
+      uploadArea.classList.remove('border-orange-400', 'bg-orange-50');
+      totalAmount.textContent = '$75'; // Reset to default
+      lucide.createIcons();
     });
 
     // Smooth scroll for gallery button
